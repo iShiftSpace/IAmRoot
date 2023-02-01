@@ -7,6 +7,7 @@ public class SpawnObjects : MonoBehaviour
     public float speed;
     public int direction;
     public bool isSorted;
+    public string side;
     SortingMiniGamePlayer player;
     // Start is called before the first frame update
     void Start()
@@ -30,6 +31,25 @@ public class SpawnObjects : MonoBehaviour
         {
             player.currentSpawnObject = this;
             player.canAct = true;
+        }
+        else if (collision.CompareTag(side))
+        {
+            
+        }
+        else
+        {
+            GameplayManager.instance.livesCounter--;
+            Destroy(gameObject);
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+
+        if (collision.CompareTag("Player"))
+        {
+            player.currentSpawnObject = null;
+            player.canAct = false;
         }
     }
 }

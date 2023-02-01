@@ -9,6 +9,8 @@ public class SortingMiniGamePlayer : MonoBehaviour
     float horizontal;
     float vertical;
 
+    public Transform[] lanes;
+    int currentLane;
     public bool canAct;
 
     public SpawnObjects currentSpawnObject;
@@ -17,6 +19,7 @@ public class SortingMiniGamePlayer : MonoBehaviour
     void Start()
     {
         body = GetComponent<Rigidbody2D>();
+        currentLane = 0;
     }
 
     // Update is called once per frame
@@ -24,6 +27,24 @@ public class SortingMiniGamePlayer : MonoBehaviour
     {
         vertical = Input.GetAxisRaw("Vertical");
         if (canAct) Sort();
+        transform.position = new Vector2(lanes[currentLane].position.x, transform.position.y);
+
+        if(Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.LeftArrow))
+        {
+            if(currentLane > 0)
+            {
+                currentLane -= 1;
+            }
+        } 
+        
+        if(Input.GetKeyDown(KeyCode.D) || Input.GetKeyDown(KeyCode.RightArrow))
+        {
+            if(currentLane < lanes.Length-1)
+            {
+                currentLane += 1;
+            }
+        }
+
     }
 
     private void FixedUpdate()

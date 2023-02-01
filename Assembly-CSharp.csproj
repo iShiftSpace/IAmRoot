@@ -90,6 +90,7 @@
     <Compile Include="Assets\LaneSpawner.cs" />
     <Compile Include="Assets\SpawnObjects.cs" />
     <Compile Include="Assets\SortingMiniGamePlayer.cs" />
+    <Compile Include="Assets\GameplayManager.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />

@@ -13,9 +13,9 @@ GameObject:
   - component: {fileID: 905168647958037414}
   - component: {fileID: 4626175531822937346}
   - component: {fileID: -4318002447737286773}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Virus
-  m_TagString: Untagged
+  m_TagString: Bad
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -100,6 +100,7 @@ MonoBehaviour:
   speed: 5
   direction: 0
   isSorted: 0
+  side: Bad
 --- !u!58 &4626175531822937346
 CircleCollider2D:
   m_ObjectHideFlags: 0

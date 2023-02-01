@@ -5,7 +5,7 @@ using UnityEngine;
 public class LaneSpawner : MonoBehaviour
 {
     public GameObject[] spawnObjects;
-    public GameObject spawnPos;
+    public GameObject[] spawnPos;
     public float startspawnTime;
     float currentTime;
 
@@ -30,7 +30,8 @@ public class LaneSpawner : MonoBehaviour
     public void Spawn()
     {
         int rand = Random.Range(0, spawnObjects.Length);
-        Instantiate(spawnObjects[rand], spawnPos.transform.position, Quaternion.identity);
+        int randPos = Random.Range(0, spawnPos.Length);
+        Instantiate(spawnObjects[rand], spawnPos[randPos].transform.position, Quaternion.identity);
         startspawnTime -= 0.01f;
         currentTime = startspawnTime;
     }
